@@ -1,0 +1,39 @@
+/***** Carousel *****/
+.carousel img{
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.custom-carousel .carousel-inner {
+    border-radius: 0;
+}
+
+.carousel-inner{
+  margin-bottom: 50px;
+}
+
+/***** Aplica una sombra a las letras del título *****/
+Carousel h5 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+Carousel p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/***** Aplica una sombra a las letras del título *****/
+.carousel-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/***** Fondo medio oscuro encima de carousel *****/
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}

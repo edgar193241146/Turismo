@@ -1,0 +1,105 @@
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/***** Tamaño de carta y posición *****/
+.card-container {
+  width: 450px;
+  height: 350px;
+  margin: 10px;
+  position: relative;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+/***** Tamaño de carta, imagen
+responsiva y duración de
+transformación de animación *****/
+.card, .font-card{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+/***** Posición actual del giro de la carta *****/
+.card-container:hover .card{
+  transform: rotateY(180deg);
+}
+
+/***** Tamaño de carta de frente y atrás, y posición *****/
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 10px #000;
+  border-radius: 10px;
+}
+
+/***** Título *****/
+.card-front h3, .font-text{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, .4);
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/***** Espacio de títulos largos *****/
+.card-front .font-text{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, .4);
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/***** Inicialmente muestra la cara trasera
+de la carta *****/
+.card-back {
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  background: rgba(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/***** Enlace de "ver más" *****/
+.card-back .link{
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+/***** Información de la parte de atrás *****/
+.card-back a{
+  color: #f3f3f3;
+}
+
+.card-back h3{
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card-back p{
+  letter-spacing: 1px;
+}

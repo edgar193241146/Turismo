@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/***** Fondo completo *****/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/***** Encabezado y barra de navegación *****/
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/***** Navbar transparente y borroso *****/
+.header::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+/***** Animación fondo blanco en la barra de navegación
+al colocar el cursor *****/
+.header::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+  transition: .5s;
+}
+
+.header:hover::after{
+  left: 100%;
+}
+
+.logo, img{
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.nav-bar a{
+  font-size: 1rem;
+  color: #ffff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: .5rem;
+}
+
+.nav-bar a .active{
+  color: #00e4d5;
+}
+
+.nav-bar .icon{
+  margin-right: 2px;
+  font-size: 1.2rem;
+}
+
+/* .nav-bar .btn-logout{
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  white-space: nowrap;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-bar .btn-logout:hover{
+  background-color: #03bcb0;
+  color: #ffff;
+} */
+
+/***** Barreras de menú *****/
+#check{
+  display: none;
+}
+
+.icons{
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: #ffff;
+  cursor: pointer;
+  display: none;
+}
+
+/***** Vista pantalla en celular *****/
+@media(max-width: 992px){
+  .header{
+    padding: 1.3rem 5%;
+  }
+}
+
+@media(max-width: 768px){
+  .icons{
+    display: inline-flex;
+  }
+
+  #check:checked~.icons #menu-icon{
+    display: none;
+  }
+
+  .icons #close-icon{
+    display: none;
+  }
+
+  #check:checked~.icons #close-icon{
+    display: block;
+  }
+
+  /***** Navbar celular transparente y borroso *****/
+  .nav-bar{
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    box-shadow: rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: .3s ease;
+  }
+
+  #check:checked~.nav-bar{
+    height: 17.7rem;
+  }
+
+  .nav-bar a{
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: .3s ease;
+  }
+
+  /* .nav-bar .btn-logout{
+    display: block;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  } */
+}
+
+/***** Cambio de barreras de menú y X,
+y animación de textos al abrir la barra
+de menú*****/
+#check:checked~.nav-bar a{
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: calc(.15s * var(--i));
+}

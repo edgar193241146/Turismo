@@ -1,0 +1,79 @@
+.contact-form{
+    display: block;
+}
+
+.form-container{
+    margin: 4rem 6rem;
+    color: #2a2a2a;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-container form{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+/***** Campos ******/
+.form-container input{
+    height: 3rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #2a2a2a;
+}
+
+/***** Campo de mensaje ******/
+.form-container textarea{
+    height: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #2a2a2a;
+}
+
+/***** Mensaje de error *****/
+.form-container .error{
+    color: red;
+}
+
+/***** Botón de enviar *****/
+.form-container .btn-send{
+    display: inline;
+    height: 50px;
+    background: #000000;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/***** Animación *****/
+.form-container .btn-send:hover{
+    background-color: #00e4d5;
+    color: #ffff;
+}
+
+/***** Vista pantalla celular *****/
+@media screen and (max-width: 850px){
+    .form-container{
+        margin: 4rem 2rem;
+        color: #2a2a2a;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form-container form{
+        padding-top: 2rem;
+        width: 90%;
+    }
+}

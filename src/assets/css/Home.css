@@ -1,0 +1,90 @@
+/***** Títuo secundario *****/
+.info-home{
+  text-align: center;
+  margin: 4rem 6rem;
+}
+
+.info-home h1{
+  font-size: 3rem;
+}
+
+/***** ¿Quiénes somos? *****/
+.first-home{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4.5rem;
+}
+
+/***** Viaja con nosotros *****/
+.first-home-reverse{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4.5rem;
+}
+
+/***** Información *****/
+.home-text{
+  width: 45%;
+  text-align: start;
+  font-size: 1.1rem;
+}
+
+.home-text h2{
+  padding-bottom: 1rem;
+}
+
+.image-home{
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  z-index: -99;
+}
+
+.image-home img{
+  width: 49%;
+  height: 350px;
+  object-fit: cover;
+  box-shadow: -1px 1px 62px -18px rgba(0, 0, 0, .19);
+}
+
+.image-home img:nth-child(2){
+  position: absolute;
+  top: -10%;
+  right: 0;
+}
+
+/***** Vista pantalla celular *****/
+@media screen and (max-width: 850px){
+  .info-home{
+    margin: 4rem 2rem;
+  }
+
+  .first-home{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.5rem;
+  }
+
+  .first-home-reverse{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.5rem;
+  }
+
+  .home-text{
+    width: 100%;
+  }
+
+  .image-home{
+    width: 100%;
+    margin: 1.8rem 0;
+  }
+
+  .image-home img{
+    height: 250px;
+  }
+}
